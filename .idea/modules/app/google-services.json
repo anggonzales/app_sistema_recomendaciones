@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "975891720940",
+    "firebase_url": "https://amzmercado-default-rtdb.firebaseio.com",
+    "project_id": "amzmercado",
+    "storage_bucket": "amzmercado.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975891720940:android:0455239ce41f35b38b13c9",
+        "android_client_info": {
+          "package_name": "com.example.amazon_mercadolibre"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975891720940-j3jocb58u1g8jm317vbvb00pqc70498k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.amazon_mercadolibre",
+            "certificate_hash": "8c0739c7231a6c27d6022b9d248365340811088d"
+          }
+        },
+        {
+          "client_id": "975891720940-fmf3b87oqpdiu2fbg49p9telc64uf5q5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfs-72bAioSpxuCBOB5baRfeSyrw75T1c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "975891720940-fmf3b87oqpdiu2fbg49p9telc64uf5q5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

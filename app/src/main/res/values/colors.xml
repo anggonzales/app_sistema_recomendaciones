@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1B3CAB</color>
+    <color name="colorPrimaryDark">#455A64</color>
+    <color name="colorList">#879DEA</color>
+    <color name="colorAccent">#607D8B</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorTransparenteWhite">#cccccc</color>
+    <color name="ligh_meduim_gray" >#f3f3f3</color>
+    <color name="fav_icon_tint">#CAC7C7</color>
+    <color name="duskYellow">#FFC107</color>
+</resources>

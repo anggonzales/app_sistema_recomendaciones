@@ -1,0 +1,84 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/ligh_meduim_gray"
+    android:layout_height="200dp">
+
+    <ImageView
+        android:id="@+id/ImgArticulo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="270dp"
+        android:layout_marginBottom="32dp" />
+
+    <TextView
+        android:id="@+id/txtTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="150dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="50dp"
+        android:text="Plan Mensual"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/txtPrecio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtTitulo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="150dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:text="$USD 8.00"
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:id="@+id/txtURL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="74dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="205dp"
+        android:visibility="gone"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/txtAsin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="74dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="205dp"
+        android:visibility="gone"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textSize="15sp" />
+</RelativeLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SuscripcionRespuesta">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID"
+                android:visibility="invisible"
+                android:textStyle="bold"
+                android:id="@+id/txtId"/>
+            <TextView
+                android:id="@+id/txtMonto"
+                android:text="Monto"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/txtEstado"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                android:text="Estado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtMensaje"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                android:text="Ud. ha realizado correctamente la transferencia"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@id/edtusu"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <Button
+                android:id="@+id/btnContinuar"
+                android:layout_gravity="center_horizontal"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="180dp"
+                android:onClick="ActivtyCategoriaUsuario"
+                android:layout_height="wrap_content"
+                android:text="Continuar" />
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
