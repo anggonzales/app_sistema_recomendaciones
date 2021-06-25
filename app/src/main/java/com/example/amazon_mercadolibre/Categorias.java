@@ -101,7 +101,6 @@ public class Categorias extends AppCompatActivity {
                         if (dataSnapshot.exists()){
                             dismiss();
                             row_index++;
-
                             final String nombre=dataSnapshot.child("nombre").getValue().toString();
                             items.tvtnombre.setText(nombre);
                             final String icategory =dataSnapshot.child("idcategory").getValue().toString();
