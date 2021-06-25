@@ -9,4 +9,5 @@
     <color name="ligh_meduim_gray" >#f3f3f3</color>
     <color name="fav_icon_tint">#CAC7C7</color>
     <color name="duskYellow">#FFC107</color>
+    <color name="colorBackground">#FFFFFF</color>
 </resources>

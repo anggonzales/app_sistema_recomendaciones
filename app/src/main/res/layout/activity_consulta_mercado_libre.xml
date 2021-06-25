@@ -8,14 +8,23 @@
     tools:context=".ConsultaMercadoLibre">
 
     <LinearLayout
+
+        android:layout_margin="9dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:padding="8dp">
+   <TextView
+       android:text="Buscar Articulo"
+       android:textStyle="bold"
+       android:textSize="28sp"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
 
+   </TextView>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edtNombreText"
-            android:layout_width="290dp"
+            android:layout_width="match_parent"
             android:hint="Artículo"
             android:layout_marginRight="10dp"
             android:layout_height="wrap_content"
@@ -32,12 +41,14 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
+            android:layout_marginTop="10dp"
             android:id="@+id/btnBuscar"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minWidth="88dp"
-            android:text="" />
+            android:background="#EEE30C"
+            android:textStyle="bold"
+            android:backgroundTint="#EEE30C"
+            android:text="buscar" />
 
     </LinearLayout>
 

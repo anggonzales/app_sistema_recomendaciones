@@ -102,11 +102,13 @@ public class Login extends AppCompatActivity {
 
             final String UID = mAuth.getCurrentUser().getUid();
             userDatabaseReference.child(UID).child("verified").setValue("true");
-            Intent intent = new Intent(Login.this, Suscripcion.class);
+            Intent intent = new Intent(Login.this, CategoriaProductoUsuario.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             userDatabaseReference.child(UID).child("active_now").setValue("true");
             startActivity(intent);
             finish();
+
+
         } else {
             Toast.makeText(this, "Correo no verificado", Toast.LENGTH_SHORT).show();
             mAuth.signOut();

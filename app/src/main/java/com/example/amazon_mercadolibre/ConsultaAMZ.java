@@ -93,7 +93,7 @@ public class ConsultaAMZ extends AppCompatActivity {
                         String URL = object.getString("url");
                         String precio = jsonprecio.getString("current_price").toString();
 
-                        ClsArticulo articulo = new ClsArticulo(asin, titulo, URL, precio, imagen);
+                        ClsArticulo articulo = new ClsArticulo(asin, titulo, URL, precio, imagen,"","");
                         Log.e("product", asin + " " + titulo + " " + URL + " " + precio + " "+ imagen);
                         lista.add(articulo);
                     }

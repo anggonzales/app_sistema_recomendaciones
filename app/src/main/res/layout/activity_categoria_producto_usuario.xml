@@ -14,11 +14,46 @@
 
         <TextView
             android:id="@+id/titulo"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
             android:layout_height="wrap_content"
             android:text="¿Cuales son las categorías de productos que más te interesan?"
             android:layout_gravity="center_horizontal"
-            android:textSize="28sp" />
+            android:textSize="20sp" />
+        <LinearLayout
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btnGuardar"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Guardar"
+                android:layout_marginRight="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.894"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.969" />
+
+            <Button
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/btnOmitir"
+                android:layout_marginLeft="10dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="Omitir"
+                android:onClick="ViewPrincipal"/>
+        </LinearLayout>
+
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_gravity="center_horizontal"
@@ -30,28 +65,7 @@
             android:layout_marginBottom="10dp"
             android:layout_marginRight="10dp" />
 
-        <Button
-            android:id="@+id/btnGuardar"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Guardar"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.894"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.969" />
 
-        <Button
-            android:layout_gravity="center_horizontal"
-            android:id="@+id/btnOmitir"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:text="Omitir"
-            android:onClick="ViewPrincipal"/>
 
     </LinearLayout>
 </RelativeLayout>

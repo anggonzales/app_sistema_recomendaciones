@@ -11,8 +11,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".ConsultaAMZ"></activity>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Categorias"></activity>
+        <activity android:name=".Busqueda" />
+        <activity android:name=".ConsultaAMZ2" />
+        <activity android:name=".ConsultaMercadoLibre2" />
+        <activity android:name=".ConsultaAMZ" />
         <activity android:name=".Administracion" />
         <activity android:name=".Registro" />
 

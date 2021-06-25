@@ -30,7 +30,7 @@ public class CategoriaAdapter extends RecyclerView.Adapter<CategoriaAdapter.View
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = inflador.inflate(R.layout.item_categoria_producto_usuario, parent, false);
+        View v = inflador.inflate(R.layout.item_category, parent, false);
         return new ViewHolder(v);
     }
 
@@ -38,7 +38,7 @@ public class CategoriaAdapter extends RecyclerView.Adapter<CategoriaAdapter.View
     public void onBindViewHolder(ViewHolder holder, final int i) {
         holder.Categorias.setText(ListaCategoria.get(i).getNombre());
         holder.NombreCategoria.setChecked(ListaCategoria.get(i).isSelected());
-
+        holder.idcategory=ListaCategoria.get(i).getIdcategory();
 
         holder.setItemClickListener(new ViewHolder.ItemClickListener(){
             public void onItemClick(View v, int pos){
@@ -66,7 +66,7 @@ public class CategoriaAdapter extends RecyclerView.Adapter<CategoriaAdapter.View
         public CheckBox NombreCategoria;
         public TextView Categorias;
         ItemClickListener itemClickListener;
-
+        String idcategory;
         ViewHolder(View itemView) {
             super(itemView);
             NombreCategoria = (CheckBox) itemView.findViewById(R.id.chkCategoria);

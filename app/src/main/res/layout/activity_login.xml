@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+
     android:background="@drawable/login_img"
     tools:context=".Login">
 
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/consulting"
+        >
+    </ImageView>
     <TextView
         android:id="@+id/titulo"
         android:layout_width="wrap_content"
@@ -17,22 +29,20 @@
         android:textAppearance="?android:textAppearanceLarge"
         android:textColor="@color/colorPrimary"
         android:textSize="28sp"
+        android:layout_gravity="center"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/edtusu"
-        app:layout_constraintHorizontal_bias="0.543"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+       />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edtusu"
         android:layout_marginBottom="10dp"
-        android:layout_width="390dp"
+        android:layout_width="match_parent"
         android:hint="Email"
         app:endIconMode="clear_text"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp"
         app:startIconDrawable="@mipmap/email_icon"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toTopOf="@id/password"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <EditText
@@ -44,13 +54,14 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/password"
-        android:layout_width="390dp"
+        android:layout_width="match_parent"
         android:hint="Password"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp"
         app:startIconDrawable="@mipmap/password_icon"
         app:endIconMode="password_toggle"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+
         app:layout_constraintBottom_toTopOf="@id/btnlogin"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <EditText
@@ -63,13 +74,11 @@
     <Button
         android:id="@+id/btnlogin"
         android:text="Ingresar"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

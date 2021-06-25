@@ -6,10 +6,10 @@ public class ClsCategoria {
     private String Nombre;
     private String Descripcion;
     private boolean isSelected;
+    private  String idcategory;
 
     public ClsCategoria() {
     }
-
 
 
     public ClsCategoria(String nombre) {
@@ -54,6 +54,15 @@ public class ClsCategoria {
 
     public void setSelected(boolean selected) {
         isSelected = selected;
+    }
+
+
+    public String getIdcategory() {
+        return idcategory;
+    }
+
+    public void setIdcategory(String idcategory) {
+        this.idcategory = idcategory;
     }
 
     @Override

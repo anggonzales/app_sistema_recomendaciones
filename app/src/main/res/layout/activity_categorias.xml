@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    android:orientation="vertical"
+    tools:context=".Categorias">
+
+    <TextView
+        android:text="CAategorias"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:background="#EDF3F2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/recyclercategorias"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp" />
+        </LinearLayout>
+
+
+     <!--   <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerproductos"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp" />  -->
+
+
+        <GridView
+
+            android:id="@+id/simpleGridView1"
+            android:layout_width="match_parent"
+            android:horizontalSpacing="-25dp"
+            android:verticalSpacing="1dp"
+            android:layout_height="match_parent"
+            android:numColumns="3"
+            android:padding="1dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:columnWidth="0dp"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>

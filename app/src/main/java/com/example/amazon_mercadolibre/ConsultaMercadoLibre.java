@@ -77,7 +77,7 @@ public class ConsultaMercadoLibre extends AppCompatActivity {
                         String imagen = object.getString("thumbnail");
                         String URL = object.getString("permalink");
 
-                        ClsArticulo articulo = new ClsArticulo(asin, titulo, URL, precio, imagen);
+                        ClsArticulo articulo = new ClsArticulo(asin, titulo, URL, precio, imagen,"","");
                         Log.e("product", asin + " " + titulo + " " + URL + " " + precio + " " + imagen);
                         lista.add(articulo);
                     }

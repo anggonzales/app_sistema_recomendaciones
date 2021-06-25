@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -45,6 +47,15 @@ public class CategoriaProductoUsuario extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categoria_producto_usuario);
+
+
+        SharedPreferences preferences= getSharedPreferences("user", Context.MODE_PRIVATE);
+        String infouse=preferences.getString("user","nulo");
+       if (!infouse.equals("nulo")){
+            startActivity(new Intent(this,Administracion.class));
+        }
+
+
         recyclerView = findViewById(R.id.rcvListaCategorias);
         btnGuardar = (Button) findViewById(R.id.btnGuardar);
         mAuth = FirebaseAuth.getInstance();
@@ -72,19 +83,17 @@ public class CategoriaProductoUsuario extends AppCompatActivity {
                     reference = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(IdUser);
                     reference.child("Categoria").setValue(lista);
                     sb.append(nombre);
-
-
                     if(i != CategoriaAdapter.ListaCategoriaChecked.size() -1){
                         sb.append("\n");
                     }
                     i++;
+                    saveshared(IdUser);
 
                     Intent intent = new Intent(CategoriaProductoUsuario.this, Administracion.class);
                     startActivity(intent);
                     finish();
 
                 } while (i < CategoriaAdapter.ListaCategoriaChecked.size());
-
 
                 if(CategoriaAdapter.ListaCategoriaChecked.size() > 0){
                     Toast.makeText(CategoriaProductoUsuario.this, sb.toString(), Toast.LENGTH_LONG).show();
@@ -155,5 +164,11 @@ public class CategoriaProductoUsuario extends AppCompatActivity {
         Intent intent = new Intent(this, Principal.class);
         startActivity(intent);
         finish();
+    }
+    private void saveshared(String user){
+        SharedPreferences preferences=getSharedPreferences("user", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor=preferences.edit();
+        editor.putString("user",user);
+        editor.commit();
     }
 }
