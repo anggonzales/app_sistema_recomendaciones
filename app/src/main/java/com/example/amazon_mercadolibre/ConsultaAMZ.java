@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -55,48 +56,53 @@ public class ConsultaAMZ extends AppCompatActivity {
         btnConsulta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ArticuloAdapter adaptadorRecycler = new ArticuloAdapter(ConsultaAMZ.this, Articulo);
-                recyclerView.setAdapter(adaptadorRecycler);
-                layoutManager = new LinearLayoutManager(ConsultaAMZ.this);
-                recyclerView.setLayoutManager(layoutManager);
+              //  ArticuloAdapter adaptadorRecycler = new ArticuloAdapter(ConsultaAMZ.this, Articulo);
+             //   recyclerView.setAdapter(adaptadorRecycler);
+              //  layoutManager = new LinearLayoutManager(ConsultaAMZ.this);
+           //     recyclerView.setLayoutManager(layoutManager);
 
-                if(Articulo.size() > 0){
-                    Articulo.clear();
-                    ObtenerConsultaProducto(Articulo);
-                } else {
-                    ObtenerConsultaProducto(Articulo);
-                }
+                ObtenerConsultaProducto();
             }
         });
     }
 
-    public void ObtenerConsultaProducto(final ArrayList lista) {
+    public void ObtenerConsultaProducto() {
+
+        Articulo.clear();
         String URL = "https://amazon-product-reviews-keywords.p.rapidapi.com/product/search?keyword=" + edtNombre.getText().toString() + "&country=US&category=aps";
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         JsonObjectRequest objRequest = new JsonObjectRequest(com.android.volley.Request.Method.GET, URL, null, new com.android.volley.Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {
+
+                    StaggeredGridLayoutManager mLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+                    recyclerView.setLayoutManager(mLayoutManager);
+
                     JSONArray jsonData = response.getJSONArray("products");
                     //JSONObject jsonData = response.getJSONObject("products");
                     Log.e("datos", response.toString());
-                    Log.e("test", jsonData.toString());
+                   // Log.e("test", jsonData.toString());
 
                     for (int i = 0; i < jsonData.length(); i++) {
                         JSONObject object = jsonData.getJSONObject(i);
                         JSONObject jsonprecio = object.getJSONObject("price");
-                        Log.e("price", jsonprecio.toString());
-
+                      //  Log.e("price", jsonprecio.toString());
                         String asin = object.getString("asin");
                         String titulo = object.getString("title");
                         String imagen = object.getString("thumbnail");
                         String URL = object.getString("url");
-                        String precio = jsonprecio.getString("current_price").toString();
+                        String precio =  jsonprecio.getString("current_price").toString();
+                        String currency_id= jsonprecio.getString("currency");
 
-                        ClsArticulo articulo = new ClsArticulo(asin, titulo, URL, precio, imagen,"","");
+                        ClsArticulo articulo = new ClsArticulo(asin, titulo, URL, precio, imagen,currency_id,"Nuevo");
+                        //   ClsArticulo articulo = new ClsArticulo(asin, titulo, URL, precio, imagen,currency_id,condition);
                         Log.e("product", asin + " " + titulo + " " + URL + " " + precio + " "+ imagen);
-                        lista.add(articulo);
+                        Articulo.add(articulo);
                     }
+                    ArticuloAdapter adaptadorRecycler = new ArticuloAdapter(ConsultaAMZ.this, Articulo);
+                    recyclerView.setAdapter(adaptadorRecycler);
+                    Toast.makeText(ConsultaAMZ.this, edtNombre.getText().toString(), Toast.LENGTH_SHORT).show();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

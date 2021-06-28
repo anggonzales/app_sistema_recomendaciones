@@ -152,7 +152,6 @@ public class Categorias extends AppCompatActivity {
        // Toast.makeText(Categorias.this, idcategory, Toast.LENGTH_SHORT).show();
         String URL="https://api.mercadolibre.com/sites/MPE/search?category="+idcategory;
         RequestQueue requestQueue = Volley.newRequestQueue(Categorias.this);
-
          objRequest = new JsonObjectRequest(com.android.volley.Request.Method.GET, URL, null, new com.android.volley.Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {

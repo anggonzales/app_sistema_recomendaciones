@@ -34,17 +34,17 @@ public class ArticuloAdapter extends RecyclerView.Adapter<ArticuloAdapter.ViewHo
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(micontext).inflate(R.layout.item_articulo_amz, parent, false);
+        View v = LayoutInflater.from(micontext).inflate(R.layout.item_productamazon, parent, false);
         return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int i) {
-        holder.Asin.setText(ListaArticulo.get(i).getAsin());
+      //  holder.Asin.setText(ListaArticulo.get(i).getAsin());
         holder.Titulo.setText(ListaArticulo.get(i).getTitulo());
-        holder.Precio.setText(" US$ " + ListaArticulo.get(i).getPrecio());
+        holder.Precio.setText(ListaArticulo.get(i).getCurrency_id()+" "+ListaArticulo.get(i).getPrecio());
         Picasso.with(micontext).load(ListaArticulo.get(i).getImagen()).into(holder.getImagen());
-        holder.URL.setText(ListaArticulo.get(i).getURL());
+      //  holder.URL.setText(ListaArticulo.get(i).getURL());
         final String URLAMZ = ListaArticulo.get(i).getURL();
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,11 +70,11 @@ public class ArticuloAdapter extends RecyclerView.Adapter<ArticuloAdapter.ViewHo
 
         public ViewHolder(View itemView) {
             super(itemView);
-            Asin = (TextView) itemView.findViewById(R.id.txtAsin);
-            Titulo = (TextView) itemView.findViewById(R.id.txtTitulo);
-            Precio = (TextView) itemView.findViewById(R.id.txtPrecio);
-            URL = (TextView) itemView.findViewById(R.id.txtURL);
-            Imagen = (ImageView) itemView.findViewById(R.id.ImgArticulo);
+        //    Asin = (TextView) itemView.findViewById(R.id.txtAsin);
+            Titulo = (TextView) itemView.findViewById(R.id.txtTituloAM);
+            Precio = (TextView) itemView.findViewById(R.id.txtPrecioAM);
+        //    URL = (TextView) itemView.findViewById(R.id.txtURL);
+            Imagen = (ImageView) itemView.findViewById(R.id.ImgArticuloAM);
         }
 
         public ImageView getImagen() {

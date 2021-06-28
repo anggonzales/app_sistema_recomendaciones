@@ -7,6 +7,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -31,11 +32,13 @@ public class Login extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseUser user;
     private DatabaseReference userDatabaseReference;
+    TextView txtregstro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        txtregstro=(TextView)findViewById(R.id.txtregistro);
         CargarControles();
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
@@ -48,6 +51,16 @@ public class Login extends AppCompatActivity {
                 Ingresar(email,password);
             }
         });
+        txtregstro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Registrase();
+            }
+        });
+    }
+
+    private void Registrase() {
+        startActivity(new Intent(this, Registro.class));
     }
 
     private void CargarControles() {
@@ -99,7 +112,6 @@ public class Login extends AppCompatActivity {
             isVerified = user.isEmailVerified();
         }
         if (isVerified){
-
             final String UID = mAuth.getCurrentUser().getUid();
             userDatabaseReference.child(UID).child("verified").setValue("true");
             Intent intent = new Intent(Login.this, CategoriaProductoUsuario.class);
@@ -107,8 +119,6 @@ public class Login extends AppCompatActivity {
             userDatabaseReference.child(UID).child("active_now").setValue("true");
             startActivity(intent);
             finish();
-
-
         } else {
             Toast.makeText(this, "Correo no verificado", Toast.LENGTH_SHORT).show();
             mAuth.signOut();

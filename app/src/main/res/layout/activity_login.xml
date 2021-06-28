@@ -14,7 +14,6 @@
     <ImageView
         android:layout_width="200dp"
         android:layout_height="200dp"
-
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
         android:src="@drawable/consulting"
@@ -81,4 +80,17 @@
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         />
+        <TextView
+            android:id="@+id/txtregistro"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Registrarse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
 </LinearLayout>

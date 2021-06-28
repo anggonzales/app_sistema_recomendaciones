@@ -10,6 +10,7 @@
 
 
     <TextView
+        android:id="@+id/txtcorreouser"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:textStyle="bold"
@@ -21,6 +22,7 @@
     </TextView>
 
     <TextView
+        android:id="@+id/txtnombreuser"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:textStyle="bold"

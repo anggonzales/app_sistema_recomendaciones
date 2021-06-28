@@ -6,16 +6,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:background="#C2F9ED"
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:padding="8dp">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edtNombreText"
-            android:layout_width="290dp"
+            android:layout_width="match_parent"
             android:hint="Artículo"
             android:layout_marginRight="10dp"
             android:layout_height="wrap_content"
@@ -33,11 +34,14 @@
 
         <Button
             android:id="@+id/btnBuscar"
+            android:background="#ed6f01"
+            android:backgroundTint="#ed6f01"
+            android:textColor="#FFFFFF"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minWidth="88dp"
-            android:text="" />
+            android:text="Buscar" />
 
     </LinearLayout>
 
